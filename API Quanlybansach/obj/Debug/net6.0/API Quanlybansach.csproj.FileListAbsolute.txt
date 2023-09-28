@@ -1,0 +1,46 @@
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.csproj.AssemblyReference.cache
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.AssemblyInfoInputs.cache
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.AssemblyInfo.cs
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.csproj.CoreCompileInputs.cache
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.MvcApplicationPartsAssemblyInfo.cache
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\appsettings.Development.json
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\appsettings.json
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\API Quanlybansach.exe
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\API Quanlybansach.deps.json
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\API Quanlybansach.runtimeconfig.json
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\API Quanlybansach.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\API Quanlybansach.pdb
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\BusinessLogicLayer.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\DataAccessLayer.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\DataModel.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\BusinessLogicLayer.pdb
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\DataModel.pdb
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\DataAccessLayer.pdb
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.MvcApplicationPartsAssemblyInfo.cs
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\staticwebassets\msbuild.API Quanlybansach.Microsoft.AspNetCore.StaticWebAssets.props
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\staticwebassets\msbuild.build.API Quanlybansach.props
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.API Quanlybansach.props
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.API Quanlybansach.props
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\staticwebassets.pack.json
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\staticwebassets.build.json
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\staticwebassets.development.json
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\scopedcss\bundle\API Quanlybansach.styles.css
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.csproj.CopyComplete
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.dll
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\refint\API Quanlybansach.dll
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.pdb
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.genruntimeconfig.cache
+D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\ref\API Quanlybansach.dll
