@@ -74,7 +74,7 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
-        public List<ThongKeKhachModel> Search(int pageIndex, int pageSize, out long total, string ten_khach, DateTime?fr_NgayTao, DateTime?to_NgayTao)
+        public List<ThongKeKhachModel> Search(int pageIndex, int pageSize, out long total, string ten_khach, DateTime?KhachModel, DateTime?to_NgayTao)
         {
             string msgError = "";
             total = 0;
@@ -84,7 +84,7 @@ namespace DataAccessLayer
                     "@page_index", pageIndex,
                     "@pagesize", pageSize,
                     "@ten_khach", ten_khach,
-                    "@fr_NgayTao", fr_NgayTao,
+                    "@KhachModel", KhachModel,
                     "@to-NgayTao", to_NgayTao
                     );
                 if (!string.IsNullOrEmpty(msgError))

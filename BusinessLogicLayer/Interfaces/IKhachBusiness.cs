@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer
+namespace BusinessLogicLayer
 {
-    public partial interface IKhachRepository
+    public partial interface IKhachBusiness
     {
         KhachModel GetDatabyID(string id);
         bool Create(KhachModel model);

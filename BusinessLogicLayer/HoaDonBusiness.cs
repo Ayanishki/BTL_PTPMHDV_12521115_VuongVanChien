@@ -3,7 +3,7 @@ using DataModel;
 using System.Reflection;
 namespace BusinessLogicLayer
 {
-    public class HoaDonBusiness:IHoaDonRepository
+    public class HoaDonBusiness:IHoaDonBusiness
     {
         private IHoaDonRepository _res;
         public HoaDonBusiness(IHoaDonRepository res)
