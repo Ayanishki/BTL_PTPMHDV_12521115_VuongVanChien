@@ -37,11 +37,11 @@ namespace DataAccessLayer
             string msgError;
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp)_khach_create",
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_khach_create",
                     "@TenKH", model.TenKH,
-                    "@SdtKH", model.SdtKH,
-                    "@Diachi", model.Diachi,
-                    "@Email",model.Email);
+                    "@SDT", model.SdtKH,
+                    "@Email",model.Email,
+                    "@Diachi", model.Diachi);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -81,7 +81,7 @@ namespace DataAccessLayer
             total = 0;
 
             try
-            {
+            {   
                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_khach_search",
                     "@page_index", pageIndex,
                     "@page_size", pageSize,

@@ -44,3 +44,11 @@ D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\refint\API Quanlybans
 D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.pdb
 D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\API Quanlybansach.genruntimeconfig.cache
 D:\C#\API Quanlybansach\API Quanlybansach\obj\Debug\net6.0\ref\API Quanlybansach.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\C#\API Quanlybansach\API Quanlybansach\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

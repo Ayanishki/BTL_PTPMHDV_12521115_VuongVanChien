@@ -1,7 +1,6 @@
 D:\C#\API Quanlybansach\DataModel\bin\Debug\net6.0\DataModel.deps.json
 D:\C#\API Quanlybansach\DataModel\bin\Debug\net6.0\DataModel.dll
 D:\C#\API Quanlybansach\DataModel\bin\Debug\net6.0\DataModel.pdb
-D:\C#\API Quanlybansach\DataModel\obj\Debug\net6.0\DataModel.csproj.AssemblyReference.cache
 D:\C#\API Quanlybansach\DataModel\obj\Debug\net6.0\DataModel.GeneratedMSBuildEditorConfig.editorconfig
 D:\C#\API Quanlybansach\DataModel\obj\Debug\net6.0\DataModel.AssemblyInfoInputs.cache
 D:\C#\API Quanlybansach\DataModel\obj\Debug\net6.0\DataModel.AssemblyInfo.cs

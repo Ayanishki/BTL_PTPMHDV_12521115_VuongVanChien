@@ -40,21 +40,25 @@ namespace Api.BanHang.Controllers
         {
             try
             {
-                var page = int.Parse(formData["page"].ToString());
-                var pageSize = int.Parse(formData["pageSize"].ToString());
+                var page_index = int.Parse(formData["page_index"].ToString());
+                var page_size = int.Parse(formData["page_size"].ToString());
                 string ten_khach = "";
                 if (formData.Keys.Contains("ten_khach") && !string.IsNullOrEmpty(Convert.ToString(formData["ten_khach"]))) { ten_khach = Convert.ToString(formData["ten_khach"]); }
-                string dia_chi = "";
+                string dia_chi = "";    
                 if (formData.Keys.Contains("dia_chi") && !string.IsNullOrEmpty(Convert.ToString(formData["dia_chi"]))) { dia_chi = Convert.ToString(formData["dia_chi"]); }
+                //string email = "";
+                //if (formData.Keys.Contains("email") && !string.IsNullOrEmpty(Convert.ToString(formData["email"]))) { email = Convert.ToString(formData["email"]); }
+                //string sdtkh = "";
+                //if (formData.Keys.Contains("sdtkh") && !string.IsNullOrEmpty(Convert.ToString(formData["sdtkh"]))) { dia_chi = Convert.ToString(formData["dia_chi"]); }
                 long total = 0;
-                var data = _khachBusiness.Search(page, pageSize, out total, ten_khach, dia_chi);
+                var data = _khachBusiness.Search(page_index, page_size, out total, ten_khach, dia_chi);
                 return Ok(
                     new
                     {
                         TotalItems = total,
                         Data = data,
-                        Page = page,
-                        PageSize = pageSize
+                        Page = page_index,
+                        PageSize = page_size
                     }
                     );
             }

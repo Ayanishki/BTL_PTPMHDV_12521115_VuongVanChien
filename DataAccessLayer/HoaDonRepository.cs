@@ -56,11 +56,13 @@ namespace DataAccessLayer
             {
                 // CẦN XEM LẠI 
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoa_don_update",
+                    "@MaHoaDon",model.MaHoaDon,
                     "@TenKH", model.TenKH,
                     "@Diachi", model.Diachi,
                     "@SdtKh", model.SdtKH,
                     "@Email", model.Email,
                     "@NgayLapHD", model.NgayLapHD,
+                    "@TrangThai",model.TrangThai,
                     "@list_json_chitiethoadon", model.list_json_chitiethoadon != null ? MessageConvert.SerializeObject(model.list_json_chitiethoadon) : null);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -74,7 +76,7 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
-        public List<ThongKeKhachModel> Search(int pageIndex, int pageSize, out long total, string ten_khach, DateTime?KhachModel, DateTime?to_NgayTao)
+        public List<ThongKeKhachModel> Search(int pageIndex, int pageSize, out long total, string ten_khach, DateTime?fr_NgayTao, DateTime?to_NgayTao)
         {
             string msgError = "";
             total = 0;
@@ -84,7 +86,7 @@ namespace DataAccessLayer
                     "@page_index", pageIndex,
                     "@pagesize", pageSize,
                     "@ten_khach", ten_khach,
-                    "@KhachModel", KhachModel,
+                    "@fr_NgayTao",fr_NgayTao,
                     "@to-NgayTao", to_NgayTao
                     );
                 if (!string.IsNullOrEmpty(msgError))
