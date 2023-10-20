@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kclEusB9+ErFfoAXZUAzVHrCDZR/56xbR7rySlADGXM=",
+  "Source": "API Gateway Ban Sach (Ocelot)",
+  "BasePath": "_content/API Gateway Ban Sach (Ocelot)",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

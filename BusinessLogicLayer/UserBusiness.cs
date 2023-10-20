@@ -1,48 +1,44 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataModel;
+﻿using BusinessLogicLayer;
 using DataAccessLayer;
-using System.IdentityModel.Tokens.Jwt;
+using DataModel;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net.Sockets;
 using System.Security.Claims;
+using System.Text;
 
 namespace BusinessLogicLayer
 {
-    public class UserBusiness:IUserBusiness
+    public class UserBusiness : IUserBusiness
     {
-        private IUserBusiness _res;
+        private IUserRepository _res;
         private string secret;
-        public UserBusiness(IUserBusiness res, IConfiguration configuration)
+        public UserBusiness(IUserRepository res, IConfiguration configuration)
         {
             _res = res;
-            secret = configuration["AppSetting:Secret"];
+            secret = configuration["AppSettings:Secret"];
         }
-        public UserModel Login(string username, string password)
+
+        public UserModel Login(string taikhoan, string matkhau)
         {
-            var user = _res.Login(username, password);
+            var user = _res.Login(taikhoan, matkhau);
             if (user == null)
-            {
                 return null;
-            }
-            var tokenHadler = new JwtSecurityTokenHandler();
+            var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.Username.ToString()),
+                    new Claim(ClaimTypes.Name, user.Usernames.ToString()),
                     new Claim(ClaimTypes.Email, user.Email)
-
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.Aes128CbcHmacSha256),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.Aes128CbcHmacSha256)
             };
-            var token = tokenHadler.CreateToken(tokenDescriptor);
-            user.token = tokenHadler.WriteToken(token);
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            user.token = tokenHandler.WriteToken(token);
             return user;
         }
     }

@@ -9,6 +9,6 @@ namespace BusinessLogicLayer
 {
     public partial interface IUserBusiness
     {
-        UserModel Login(string username, string password);
+        UserModel Login(string taikhoan, string matkhau);
     }
 }

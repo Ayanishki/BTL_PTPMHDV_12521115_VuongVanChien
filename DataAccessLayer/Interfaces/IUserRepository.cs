@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer
-{ 
-    public interface IUserRepository
+{
+    public partial interface IUserRepository
     {
-        UserModel Login(string username, string password);
+        UserModel Login(string taikhoan, string matkhau);
     }
 }

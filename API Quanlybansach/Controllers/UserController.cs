@@ -1,10 +1,10 @@
 ﻿using BusinessLogicLayer;
 using DataModel;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace API_Quanlybansach.Controllers
+namespace Api.BanHang.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -22,7 +22,7 @@ namespace API_Quanlybansach.Controllers
             var user = _userBusiness.Login(model.Username, model.Password);
             if (user == null)
                 return BadRequest(new { message = "Tài khoản hoặc mật khẩu không đúng!" });
-            return Ok(new { taikhoan = user.Username, email = user.Email, token = user.token });
+            return Ok(new { taikhoan = user.Usernames, email = user.Email, token = user.token });
         }
     }
 }

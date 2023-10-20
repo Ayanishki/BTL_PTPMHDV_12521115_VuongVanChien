@@ -1,10 +1,4 @@
-﻿
-using DataModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataModel;
 
 namespace DataAccessLayer
 {
@@ -13,16 +7,17 @@ namespace DataAccessLayer
         private IDatabaseHelper _dbHelper;
         public UserRepository(IDatabaseHelper dbHelper)
         {
-            this._dbHelper = dbHelper;
+            _dbHelper = dbHelper;
         }
-        public UserModel Login(string username, string password)
+        public UserModel Login(string taikhoan, string matkhau)
         {
             string msgError = "";
             try
             {
                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_login",
-                    "@taikhoan", username,
-                    "matkhau", password);
+                     "@taikhoan", taikhoan,
+                     "@matkhau", matkhau
+                     );
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
                 return dt.ConvertTo<UserModel>().FirstOrDefault();

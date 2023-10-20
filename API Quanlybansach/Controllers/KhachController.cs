@@ -40,8 +40,8 @@ namespace Api.BanHang.Controllers
         {
             try
             {
-                var page_index = int.Parse(formData["page_index"].ToString());
-                var page_size = int.Parse(formData["page_size"].ToString());
+                var page_index = int.Parse(formData["page"].ToString());
+                var page_size = int.Parse(formData["pageSize"].ToString());
                 string ten_khach = "";
                 if (formData.Keys.Contains("ten_khach") && !string.IsNullOrEmpty(Convert.ToString(formData["ten_khach"]))) { ten_khach = Convert.ToString(formData["ten_khach"]); }
                 string dia_chi = "";    

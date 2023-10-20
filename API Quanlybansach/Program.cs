@@ -1,25 +1,27 @@
 using BusinessLogicLayer;
 using DataAccessLayer;
 using DataModel;
-using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddCors(options=>
-{   
+builder.Services.AddCors(options =>
+{
     options.AddPolicy("AllowAll", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-
 });
-
 // Add services to the container.
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
-builder.Services.AddTransient<IKhachRepository,KhachRepository>();
-builder.Services.AddTransient<IKhachBusiness,KhachBusiness >();
+builder.Services.AddTransient<IKhachRepository, KhachRepository>();
+builder.Services.AddTransient<IKhachBusiness, KhachBusiness>();
 builder.Services.AddTransient<IHoaDonRepository, HoaDonRepository>();
 builder.Services.AddTransient<IHoaDonBusiness, HoaDonBusiness>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUserBusiness, UserBusiness>();
+builder.Services.AddTransient<ISachRepository, SachRepository>();
+builder.Services.AddTransient<ISachBusiness, SachBusiness>();
+
+
 
 // configure strongly typed settings objects
 IConfiguration configuration = builder.Configuration;
@@ -46,14 +48,13 @@ builder.Services.AddAuthentication(x =>
         ValidateAudience = false
     };
 });
+
 // Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -65,10 +66,7 @@ app.UseCors(x => x
     .AllowAnyOrigin()
     .AllowAnyMethod()
     .AllowAnyHeader());
-app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

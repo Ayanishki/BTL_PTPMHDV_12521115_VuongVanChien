@@ -1,0 +1,48 @@
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\appsettings.Development.json
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\appsettings.json
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\configuration.Development.json
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\API Gateway Ban Sach (Ocelot).exe
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\API Gateway Ban Sach (Ocelot).deps.json
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\API Gateway Ban Sach (Ocelot).runtimeconfig.json
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\API Gateway Ban Sach (Ocelot).dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\API Gateway Ban Sach (Ocelot).pdb
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\FluentValidation.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.Extensions.DiagnosticAdapter.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Ocelot.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).csproj.AssemblyReference.cache
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).AssemblyInfoInputs.cache
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).AssemblyInfo.cs
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).csproj.CoreCompileInputs.cache
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).MvcApplicationPartsAssemblyInfo.cs
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).MvcApplicationPartsAssemblyInfo.cache
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\staticwebassets\msbuild.API Gateway Ban Sach (Ocelot).Microsoft.AspNetCore.StaticWebAssets.props
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\staticwebassets\msbuild.build.API Gateway Ban Sach (Ocelot).props
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.API Gateway Ban Sach (Ocelot).props
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.API Gateway Ban Sach (Ocelot).props
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\staticwebassets.pack.json
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\staticwebassets.build.json
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\staticwebassets.development.json
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\scopedcss\bundle\API Gateway Ban Sach (Ocelot).styles.css
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).csproj.CopyComplete
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\refint\API Gateway Ban Sach (Ocelot).dll
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).pdb
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\API Gateway Ban Sach (Ocelot).genruntimeconfig.cache
+D:\C#\API Quanlybansach\Gateway Ban Sach (Ocelot)\obj\Debug\net6.0\ref\API Gateway Ban Sach (Ocelot).dll

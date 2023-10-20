@@ -9,7 +9,7 @@ namespace DataModel
     public class UserModel
     {
         public int AccountID { get; set; }
-        public string Username { get; set; }
+        public string Usernames { get; set; }
         public string Passwords { get; set; }
         public string Email { get; set; }
         public int Roles { get; set; }
