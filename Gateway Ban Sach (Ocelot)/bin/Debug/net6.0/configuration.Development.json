@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "api/sach/{everything}",
+      "DownstreamPathTemplate": "api/hoadon/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -9,7 +9,7 @@
           "Port": 5266
         }
       ],
-      "UpstreamPathTemplate": "api-admin/sach/{everything}",
+      "UpstreamPathTemplate": "api-admin/hoadon/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",

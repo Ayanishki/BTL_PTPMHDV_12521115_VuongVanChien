@@ -41,5 +41,25 @@ namespace BusinessLogicLayer
             user.token = tokenHandler.WriteToken(token);
             return user;
         }
+        public UserModel GetDatabyID(string id)
+        {
+            return _res.GetDatabyID(id);
+        }
+        public bool Create(UserModel model)
+        {
+            return _res.Create(model);
+        }
+        public bool Update(UserModel model)
+        {
+            return _res.Update(model);
+        }
+        public bool Delete(UserModel model)
+        {
+            return _res.Delete(model);
+        }
+        public List<UserModel> Search(int pageIndex, int pageSize, out long total, string username, string email)
+        {
+            return _res.Search(pageIndex, pageSize, out total, username, email);
+        }
     }
 }

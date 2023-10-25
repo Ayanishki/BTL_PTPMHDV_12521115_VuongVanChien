@@ -75,6 +75,24 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
+        public bool Delete(KhachModel model)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_khach_delete",
+                "@Id", model.MaKH);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<KhachModel> Search(int pageIndex, int pageSize, out long total, string ten_khach, string dia_chi)
         {
             string msgError = "";

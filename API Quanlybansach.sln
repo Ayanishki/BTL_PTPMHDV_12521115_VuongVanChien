@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API Quanlybansach", "API Quanlybansach\API Quanlybansach.csproj", "{46DA61D3-880D-4423-B6B0-95E8831ADC7E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModel", "DataModel\DataModel.csproj", "{C3F237BE-044B-43DE-8641-F1EAD445A11A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{07A27D38-8BFC-45EE-A4D9-1916BCB47504}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{2F5C7411-54B3-4313-A55B-7D6477E04049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API Gateway Ban Sach (Ocelot)", "Gateway Ban Sach (Ocelot)\API Gateway Ban Sach (Ocelot).csproj", "{7B53EA79-569F-4796-BBB0-3FDB596C2D59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API Admin", "API Admin\API Admin.csproj", "{6DFD8301-8F29-4C14-9E1B-AD00716EB95B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API Gateway", "Gateway\API Gateway.csproj", "{0A8B8B33-AC37-4275-B068-34B8733AB6CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{46DA61D3-880D-4423-B6B0-95E8831ADC7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46DA61D3-880D-4423-B6B0-95E8831ADC7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46DA61D3-880D-4423-B6B0-95E8831ADC7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46DA61D3-880D-4423-B6B0-95E8831ADC7E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C3F237BE-044B-43DE-8641-F1EAD445A11A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C3F237BE-044B-43DE-8641-F1EAD445A11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3F237BE-044B-43DE-8641-F1EAD445A11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,10 +31,14 @@ Global
 		{2F5C7411-54B3-4313-A55B-7D6477E04049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F5C7411-54B3-4313-A55B-7D6477E04049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F5C7411-54B3-4313-A55B-7D6477E04049}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B53EA79-569F-4796-BBB0-3FDB596C2D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B53EA79-569F-4796-BBB0-3FDB596C2D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B53EA79-569F-4796-BBB0-3FDB596C2D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B53EA79-569F-4796-BBB0-3FDB596C2D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFD8301-8F29-4C14-9E1B-AD00716EB95B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFD8301-8F29-4C14-9E1B-AD00716EB95B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFD8301-8F29-4C14-9E1B-AD00716EB95B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFD8301-8F29-4C14-9E1B-AD00716EB95B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A8B8B33-AC37-4275-B068-34B8733AB6CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8B8B33-AC37-4275-B068-34B8733AB6CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8B8B33-AC37-4275-B068-34B8733AB6CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8B8B33-AC37-4275-B068-34B8733AB6CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

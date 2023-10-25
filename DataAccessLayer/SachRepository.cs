@@ -77,6 +77,24 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
+        public bool Delete(SachModel model)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_sach_delete",
+                "@MaSach", model.MaSach);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<SachModel> Search(int pageIndex, int pageSize, out long total, string ten_sach, string tacgia)
         {
             string msgError = "";

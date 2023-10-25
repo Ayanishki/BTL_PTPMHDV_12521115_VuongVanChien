@@ -27,6 +27,10 @@ namespace BusinessLogicLayer
         {
             return _res.Update(model);
         }
+        public bool Delete(SachModel model)
+        {
+            return _res.Delete(model);
+        }
         public  List<SachModel> Search(int pageIndex, int pageSize, out long total,string ten_sach,string tacgia) 
         { 
             return _res.Search(pageIndex,pageSize, out total, ten_sach, tacgia);

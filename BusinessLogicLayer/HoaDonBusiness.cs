@@ -22,6 +22,10 @@ namespace BusinessLogicLayer
         {
             return _res.Update(model);
         }
+        public bool Delete(HoaDonModel model)
+        {
+            return _res.Delete(model);
+        }
         public List<ThongKeKhachModel> Search(int pageIndex, int pageSize, out long total, string ten_khach, DateTime? fr_NgayTao, DateTime? toNgayTao)
         {
             return _res.Search(pageIndex, pageSize, out total, ten_khach, fr_NgayTao, toNgayTao);
