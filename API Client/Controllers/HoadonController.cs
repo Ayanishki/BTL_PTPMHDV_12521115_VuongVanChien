@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.BanHang.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api-client/[controller]")]
     [ApiController]
     public class HoaDonController : ControllerBase
     {

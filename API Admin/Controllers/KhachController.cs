@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Api.BanHang.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api-admin/[controller]")]
     [ApiController]
     public class KhachController : ControllerBase
     {

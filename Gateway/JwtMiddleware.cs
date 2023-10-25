@@ -18,10 +18,11 @@ namespace BanMayTinh_Gateway
         private readonly RequestDelegate _next;
         private readonly AppSettings _appSettings;
         private IUserBusiness _userbusniness;
-        public JwtMiddleware(RequestDelegate next, IOptions<AppSettings> appSettings, IConfiguration configuration)
+        public JwtMiddleware(RequestDelegate next, IOptions<AppSettings> appSettings, IUserBusiness userBusiness)
         {
             _next = next;
             _appSettings = appSettings.Value;
+            _userbusniness = userBusiness;
             
         }
 
@@ -46,7 +47,7 @@ namespace BanMayTinh_Gateway
             var Taikhoan = context.Request.Form["Taikhoan"].ToString();
             var Matkhau = context.Request.Form["Matkhau"].ToString();
             var user = _userbusniness.Login(Taikhoan, Matkhau);           
-            var response = new { MaNguoiDung = user.AccountID, Email = user.Email, Token = user.token };
+            var response = new { MaNguoiDung = user.AccountID,TaiKhoan = user.Usernames, Email = user.Email, Token = user.token };
             var serializerSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented

@@ -1,74 +1,77 @@
+using Ocelot.Middleware;
+using Ocelot.DependencyInjection;
+using BusinessLogicLayer;
+using DataAccessLayer;
+using DataModel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Ocelot.DependencyInjection;
-using Ocelot.Middleware;
 using System.Text;
-using DataModel;
 using BanMayTinh_Gateway;
 
-var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(options =>
+namespace API.Gateway
 {
-    options.AddPolicy("AllowAll", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-});
-
-// configure strongly typed settings objects
-var appSettingsSection = builder.Configuration.GetSection("AppSettings");
-builder.Services.Configure<AppSettings>(appSettingsSection);
-// configure jwt authentication
-var appSettings = appSettingsSection.Get<AppSettings>();
-var key = Encoding.ASCII.GetBytes(appSettings.Secret);
-builder.Services.AddAuthentication(x =>
-{
-    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(x =>
-{
-    x.RequireHttpsMetadata = false;
-    x.SaveToken = true;
-    x.TokenValidationParameters = new TokenValidationParameters
+    public class Program
     {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = false,
-        ValidateAudience = false
-    };
-});
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
 
+            // Add services to the container.
 
-// Add services to the container.
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+            builder.Services.AddControllers();
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
-builder.Configuration.AddJsonFile("json.json", optional: false, reloadOnChange: true);
-builder.Services.AddOcelot(builder.Configuration);
+            builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
+                                 .AddJsonFile("json.json", optional: false, reloadOnChange: true);
+            builder.Services.AddControllers();
+            builder.Services.AddOcelot();
 
-IConfiguration configuration = new ConfigurationBuilder()
-                            .AddJsonFile("appsettings.json")
-                            .Build();
-var app = builder.Build();
+            IConfiguration configuration = builder.Configuration;
+            var appSettingsSection = configuration.GetSection("AppSettings");
+            builder.Services.Configure<AppSettings>(appSettingsSection);
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                            .AddJwtBearer(options =>
+                            {
+                                options.TokenValidationParameters = new TokenValidationParameters
+                                {
+                                    ValidateLifetime = true,
+                                    ValidateIssuer = false,
+                                    ValidateAudience = false,
+                                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                                };
+
+                            });
+            builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
+            builder.Services.AddTransient<IUserRepository, UserRepository>();
+            builder.Services.AddTransient<IUserBusiness, UserBusiness>();
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthorization();
+
+            app.MapControllers();
+
+            app.UseMiddleware<JwtMiddleware>();
+
+            app.UseOcelot().Wait();
+
+            app.Run();
+        }
+    }
 }
-
-app.UseRouting();
-app.UseCors(x => x
-    .AllowAnyOrigin()
-    .AllowAnyMethod()
-    .AllowAnyHeader());
-app.UseAuthentication();
-app.UseAuthorization();
-app.UseMiddleware<JwtMiddleware>(configuration);
-
-app.MapControllers();
-await app.UseOcelot();
-app.Run();
-

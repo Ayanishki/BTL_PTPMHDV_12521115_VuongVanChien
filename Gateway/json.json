@@ -1,77 +1,101 @@
 {
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:44374"
+    "BaseUrl": "http://localhost:33928"
   },
   "Routes": [
     {
-      "UpstreamPathTemplate": "/api/Khach/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      "DownstreamPathTemplate": "/api/Khach/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 44374
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/api/User/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
-      "DownstreamPathTemplate": "/api/User/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 44374
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/api/sanpham/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      "DownstreamPathTemplate": "/api/sanpham/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 44374
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/api-nguoidung/trangchu/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
-      "DownstreamPathTemplate": "/api/home/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 52554
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/api-admin/users/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "UpstreamPathTemplate": "/api-admin/khach/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       },
-      "DownstreamPathTemplate": "/api/users/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api-admin/khach/{everything}",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 20965
+          "Port": 44374
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-admin/user/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "DownstreamPathTemplate": "/api-admin/user/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44374
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-admin/sach/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/api-admin/sach/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44374
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-admin/hoadon/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE"],
+      "DownstreamPathTemplate": "/api-admin/hoadon/{everything}",
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44374
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-client/user/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "DownstreamPathTemplate": "/api-admin/users/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44300
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-client/hoadon/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT","DELETE" ],
+      "DownstreamPathTemplate": "/api-client/bill/{everything}",
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44300
         }
       ]
     }

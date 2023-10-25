@@ -51,11 +51,12 @@ namespace DataAccessLayer
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_user_create",
-                    "@MaSach", model.AccountID,
-                    "@MaLoai", model.Usernames,
-                    "@TenSach", model.Passwords,
-                    "@Gia", model.Email,
-                    "@SoLuong", model.Roles);
+                    "@displayname", model.Displayname,
+                    "@username", model.Usernames,
+                    "@password", model.Passwords,
+                    "@email", model.Email,
+                    "@sdt", model.Sdt,
+                    "@role", model.Roles);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -72,12 +73,14 @@ namespace DataAccessLayer
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_sach_update",
-                "@MaSach", model.AccountID,
-                "@MaLoai", model.Usernames,
-                "@TenSach", model.Passwords,
-                "@Gia", model.Email,
-                "@SoLuong", model.Roles
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_user_update",
+                    "@id",model.AccountID,
+                    "@displayname", model.Displayname,
+                    "@username", model.Usernames,
+                    "@password", model.Passwords,
+                    "@email", model.Email,
+                    "@sdt", model.Sdt,
+                    "@role", model.Roles
                 );
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -96,7 +99,7 @@ namespace DataAccessLayer
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_user_delete",
-                "@MaSach", model.AccountID);
+                "@id", model.AccountID);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
