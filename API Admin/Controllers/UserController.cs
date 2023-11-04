@@ -45,7 +45,7 @@ namespace Api.BanHang.Controllers
             return model;
         }
         [Route("delete-user")]
-        [HttpPost]
+        [HttpDelete]
         public UserModel Deleteitem([FromBody] UserModel model)
         {
             _userBusiness.Delete(model);

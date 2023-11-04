@@ -35,7 +35,7 @@ namespace Api.BanHang.Controllers
             return model;
         }
         [Route("delete-hoadon")]
-        [HttpPost]
+        [HttpDelete]
         public HoaDonModel Delete([FromBody] HoaDonModel model)
         {
             _hoadonBusiness.Delete(model);

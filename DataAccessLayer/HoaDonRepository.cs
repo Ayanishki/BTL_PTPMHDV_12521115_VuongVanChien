@@ -30,21 +30,23 @@ namespace DataAccessLayer
             string msgError = "";
             try
             {
+                // CẦN XEM LẠI 
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoadon_create",
                     "@TenKH", model.TenKH,
                     "@SdtKH", model.SdtKH,
                     "@Diachi", model.Diachi,
                     "@Email", model.Email,
-                    "@NgayLapHD", model.NgayLapHD, 
+                    "@NgayLapHD", model.NgayLapHD,
+                    "@TrangThai", model.TrangThai,
                     "@list_json_chitiethoadon", model.list_json_chitiethoadon != null ? MessageConvert.SerializeObject(model.list_json_chitiethoadon) : null);
-                if ((result != null && string.IsNullOrEmpty(result.ToString())) || string.IsNullOrEmpty(msgError)) 
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
-                    throw new Exception(Convert.ToString(result)+msgError);
+                    throw new Exception(Convert.ToString(result) + msgError);
                 }
-                return true ;
+                return true;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -59,7 +61,7 @@ namespace DataAccessLayer
                     "@MaHoaDon",model.MaHoaDon,
                     "@TenKH", model.TenKH,
                     "@Diachi", model.Diachi,
-                    "@SdtKh", model.SdtKH,
+                    "@SdtKH", model.SdtKH,
                     "@Email", model.Email,
                     "@NgayLapHD", model.NgayLapHD,
                     "@TrangThai",model.TrangThai,
@@ -83,7 +85,6 @@ namespace DataAccessLayer
                 // CẦN XEM LẠI 
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoa_don_delete",
                     "@id", model.MaHoaDon);
-                    //"@list_json_chitiethoadon", model.list_json_chitiethoadon != null ? MessageConvert.SerializeObject(model.list_json_chitiethoadon) : null);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);

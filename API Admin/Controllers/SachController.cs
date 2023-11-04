@@ -34,8 +34,15 @@ namespace API_Quanlybansach.Controllers
             _sachBusiness.Update(model);
             return model;
         }
+        [Route("danhmuc")]
+        [HttpGet]
+        public SachModel Item([FromBody] SachModel model)
+        {
+            _sachBusiness.Update(model);
+            return model;
+        }
         [Route("delete-sach")]
-        [HttpPost]
+        [HttpDelete]
         public SachModel Deleteitem([FromBody] SachModel model)
         {
             _sachBusiness.Delete(model);
