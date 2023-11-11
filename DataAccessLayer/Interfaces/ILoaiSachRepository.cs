@@ -9,7 +9,7 @@ namespace DataAccessLayer
 {
     public partial interface ILoaiSachRepository
     {
-        LoaiSachModel GetDatabyID(string id);
+        LoaiSachModel GetDatabyID(int id);
         bool Create(LoaiSachModel model);
         bool Update(LoaiSachModel model);
         bool Delete(LoaiSachModel model);

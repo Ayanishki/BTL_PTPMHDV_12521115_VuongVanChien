@@ -15,7 +15,7 @@ namespace DataAccessLayer
         {
             _dbHelper = dbHelper;
         }
-        public LoaiSachModel GetDatabyID(string id)
+        public LoaiSachModel GetDatabyID(int id)
         {
             string msgError = "";
             try

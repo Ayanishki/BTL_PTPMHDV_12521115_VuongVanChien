@@ -11,9 +11,12 @@ namespace DataModel
         public int MaPhieuNhap { get; set; }
         public string MaNV { get; set; }
         public DateTime NgaylapPN { get; set; }
-        public int MaNCC { get; set; }
+        public string Email { get; set; }
         public string SdtNCC { get; set; }
         public string Diachi {  get; set; }
+        public int MaNCC { get; set; }
+        public bool TrangThai { get; set; }
+        public List<ChitietphieunhapModel>list_json_chitietphieunhap {  get; set; }
     }
     public class ChitietphieunhapModel
     {

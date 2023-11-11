@@ -20,21 +20,21 @@ namespace API_Admin.Controllers
         {
             return _loaisachBusiness.GetDatabyID(id);
         }
-        [Route("create-khach")]
+        [Route("create-loaisach")]
         [HttpPost]
         public LoaiSachModel CreateItem([FromBody] LoaiSachModel model)
         {
             _loaisachBusiness.Create(model);
             return model;
         }
-        [Route("update-khach")]
+        [Route("update-loaisach")]
         [HttpPost]
         public LoaiSachModel UpdateItem([FromBody] LoaiSachModel model)
         {
             _loaisachBusiness.Update(model);
             return model;
         }
-        [Route("delete-khach")]
+        [Route("delete-loaisach")]
         [HttpDelete]
         public LoaiSachModel DeleteItem([FromBody] LoaiSachModel model)
         {
