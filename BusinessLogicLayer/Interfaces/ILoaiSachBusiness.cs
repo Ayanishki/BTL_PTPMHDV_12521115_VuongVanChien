@@ -9,7 +9,7 @@ namespace BusinessLogicLayer
 {
     public partial interface ILoaiSachBusiness
     {
-        LoaiSachModel GetDatabyID(string id);
+        LoaiSachModel GetDatabyID(int id);
         bool Create(LoaiSachModel model);
         bool Update(LoaiSachModel model);
         bool Delete(LoaiSachModel model);

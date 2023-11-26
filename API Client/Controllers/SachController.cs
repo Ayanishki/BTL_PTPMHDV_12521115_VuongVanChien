@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API_Quanlybansach.Controllers
 {
-    [Route("api-admin/[controller]")]
+    [Route("api-client/[controller]")]
     [ApiController]
     public class SachController : ControllerBase
     {

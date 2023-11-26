@@ -14,5 +14,6 @@ namespace DataModel
         public int Gia { get; set; }
         public int SoLuong { get; set; }
         public string TacGia { get; set; }  
+        public string BookCover { get; set; }
     }
 }

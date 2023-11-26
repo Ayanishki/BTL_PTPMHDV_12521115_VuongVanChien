@@ -42,7 +42,7 @@ namespace DataAccessLayer
                     "@Email", model.Email,
                     "@NgayLapPN", model.NgaylapPN,
                     "@TrangThai", model.TrangThai,
-                    "@list_json_chitiethoadon", model.list_json_chitietphieunhap != null ? MessageConvert.SerializeObject(model.list_json_chitietphieunhap) : null);
+                    "@list_json_chitietphieunhap", model.list_json_chitietphieunhap != null ? MessageConvert.SerializeObject(model.list_json_chitietphieunhap) : null);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -70,7 +70,7 @@ namespace DataAccessLayer
                     "@Email", model.Email,
                     "@NgayLapPN", model.NgaylapPN,
                     "@TrangThai", model.TrangThai,
-                    "@list_json_chitiethoadon", model.list_json_chitietphieunhap != null ? MessageConvert.SerializeObject(model.list_json_chitietphieunhap) : null);
+                    "@list_json_chitietphieunhap", model.list_json_chitietphieunhap != null ? MessageConvert.SerializeObject(model.list_json_chitietphieunhap) : null);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -109,7 +109,7 @@ namespace DataAccessLayer
             total = 0;
             try
             {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_thong_ke_khach",
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_thong_ke_ncc",
                     "@page_index", pageIndex,
                     "@page_size", pageSize,
                     "@ten_ncc", ten_ncc,

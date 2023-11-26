@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API_Admin.Controllers
 {
-    [Route("api-admin[controller]")]
+    [Route("api-admin/[controller]")]
     [ApiController]
     public class LoaiSachController : ControllerBase
     {
@@ -16,7 +16,7 @@ namespace API_Admin.Controllers
         }
         [Route("get-by-id/{id}")]
         [HttpGet]
-        public LoaiSachModel GetDatabyID(string id)
+        public LoaiSachModel GetDatabyID(int id)
         {
             return _loaisachBusiness.GetDatabyID(id);
         }

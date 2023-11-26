@@ -16,7 +16,7 @@ namespace BusinessLogicLayer
         {
             _res = res;
         }
-        public LoaiSachModel GetDatabyID(string id)
+        public LoaiSachModel GetDatabyID(int id)
         {
             return _res.GetDatabyID(id);
         }

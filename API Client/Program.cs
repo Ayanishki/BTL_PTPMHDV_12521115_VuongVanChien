@@ -20,6 +20,8 @@ builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUserBusiness, UserBusiness>();
 builder.Services.AddTransient<ISachRepository, SachRepository>();
 builder.Services.AddTransient<ISachBusiness, SachBusiness>();
+builder.Services.AddTransient<ILoaiSachRepository, LoaiSachRepository>();
+builder.Services.AddTransient<ILoaiSachBusiness, LoaiSachBusiness>();
 
 
 

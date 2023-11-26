@@ -42,7 +42,8 @@ namespace DataAccessLayer
                     "@TenSach", model.TenSach,
                     "@Gia", model.Gia,
                     "@SoLuong", model.SoLuong,
-                    "@TacGia", model.TacGia);
+                    "@TacGia", model.TacGia,
+                    "@Bookcover", model.BookCover);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -61,11 +62,12 @@ namespace DataAccessLayer
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_sach_update",
                 "@MaSach", model.MaSach,
-                "@MaLoai", model.MaLoai,
-                "@TenSach", model.TenSach,
-                "@Gia", model.Gia,
-                "@SoLuong", model.SoLuong,
-                "@TacGia", model.TacGia);
+               "@MaLoai", model.MaLoai,
+                    "@TenSach", model.TenSach,
+                    "@Gia", model.Gia,
+                    "@SoLuong", model.SoLuong,
+                    "@TacGia", model.TacGia,
+                    "@Bookcover", model.BookCover);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -105,7 +107,7 @@ namespace DataAccessLayer
                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_sach_search",
                     "@page_index", pageIndex,
                     "@page_size", pageSize,
-                    "@ten_khach", ten_sach,
+                    "@ten_sach", ten_sach,
                     "@tac_gia", tacgia);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);

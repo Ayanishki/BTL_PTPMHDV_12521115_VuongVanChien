@@ -1,4 +1,5 @@
 using BusinessLogicLayer;
+using BusinessLogicLayer.Interfaces;
 using DataAccessLayer;
 using DataModel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -22,6 +23,8 @@ builder.Services.AddTransient<ISachRepository, SachRepository>();
 builder.Services.AddTransient<ISachBusiness, SachBusiness>();
 builder.Services.AddTransient<ILoaiSachRepository, LoaiSachRepository>();
 builder.Services.AddTransient<ILoaiSachBusiness, LoaiSachBusiness>();
+builder.Services.AddTransient<IPhieuNhapRepository, PhieuNhapRepository>();
+builder.Services.AddTransient<IPhieuNhapBusiness, PhieuNhapBusiness>();
 
 
 // configure strongly typed settings objects

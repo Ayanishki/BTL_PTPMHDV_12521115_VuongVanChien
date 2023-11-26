@@ -82,7 +82,6 @@ namespace DataAccessLayer
             string msgError = "";
             try
             {
-                // CẦN XEM LẠI 
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoa_don_delete",
                     "@id", model.MaHoaDon);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
