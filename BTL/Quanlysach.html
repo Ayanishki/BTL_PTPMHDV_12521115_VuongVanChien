@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sách</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./pageProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <script src="./angular.min.js"></script>
+    <script src="./global.js"></script>
+    <script src="./homepage_sanpham.js"></script>
+</head>
+<body ng-app="AppBanSach" ng-controller="HomeCtrl">
+    <div id="frame">
+        <div id="header-page">
+            <div id="header-left">
+                <span>ADMIN</span>
+                <a class="log-out" href="./login.html"><i class="fa-solid fa-arrow-right-from-bracket">&nbsp;&nbsp;</i>Đăng Xuất</a>               
+            </div>
+            <div id="header-right">
+                <b class="title">HỆ THỐNG QUẢN TRỊ NỘI DUNG</b>
+            </div>
+        </div>
+        <div id="content-page">
+            <div class="menu">
+              <nav>
+                <ul>
+                  <li><a id="menucategory" class="link" href="./home.html">Menu</a></li>
+                  <li>
+                    <div class="link" href="#">Hóa đơn bán</div>
+                    <div class="link" href="#">Khách hàng</div>
+                    <div class="link" href="#">Hóa đơn nhập</div>
+                    <div class="link" href="#">Nhà cung cấp</div>
+                    <div class="link" href="#">Thể loại</div>
+                    <div class="link" href="#">Sách</div>
+                    <div class="link" href="#">Tác giả</div>
+                    <div class="link" href="#">Người dùng</div>
+                   
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="product">
+                 <h2> <i class="fa-solid fa-circle-arrow-right" style="font-size: 30px; color: blue; margin-top: 10px;"></i>&nbsp;&nbsp;QUẢN LÝ SẢN PHẨM</h2>
+                 <button class="add">THÊM MỚI</button>
+                 <button class="delete">XÓA NHIỀU</button>
+            </div>
+            <div style="float: left; width: 45%;">
+                <form>
+                    <div class="col-12 col-s-12 padding-box">
+                        <label for="txtright">Mã sách:</label>
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <input type="text" id="masach"
+                            placeholder="Nhập mã sách..Tự động sinh nếu không nhập...">
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <label for="txtright">Loại sách:</label>
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <input type="text" id="maloai" list="listLoai">
+                        <datalist id="listLoai">
+                            <option ng-repeat="i in listAllCategory" value="{{i.tenLoai}}" [data-value]="{{i.maLoai}}" >
+                        </datalist>
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <label for="txtright">Tên sách:</label>
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <input type="text" id="tensach" placeholder="Nhập số điện thoại...">
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <label for="txtright">Giá:</label>
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <input type="number" id="gia" placeholder="Nhập giá...">
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <label for="txtright">Số lượng:</label>
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <input type="number" id="soluong" placeholder="Nhập số lượng...">
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <label for="txtright">Tác giả:</label>
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <input type="text" id="tacgia" placeholder="Nhập tên tác giả..." readonly>
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <label for="txtright">Hình ảnh:</label>
+                    </div>
+                    <div class="col-12 col-s-12 padding-box">
+                        <input type="file" id="bookcover" onchange="loadFile(event)">
+                        <center>
+                            <span style="float: left;">View:</span>
+                            <img id="viewimg" style="max-width:180px;max-height:180px;margin-top: 10px;">
+                        </center>
+                    </div>
+                  
+                  <!-- <div class="col-12 col-s-12 padding-box">
+                      <textarea id="ghichu" cols="197" rows="4"
+                          placeholder="Nhập ghi chú (không bắt buộc)..."></textarea>
+                  </div> -->
+                </form>
+                <hr>
+                <div class="row" style="clear: both;">
+                    <table class="table_chitiet">
+                        <tbody id="DSSanPham">
+                            <tr>
+                                <th>Mã sản phẩm</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn-form" id="AddSanPham"
+                        style="background-color: rgba(44, 140, 15, 0.8);">Thêm sản phẩm</button>
+                </div>
+                <hr>
+                    <button class="btn-form" style="background-color: rgba(44, 140, 15, 0.8);"
+                        onclick="ThemHoaDon()">Thêm hóa đơn bán</button>
+                    <button class="btn-form" style="background-color: rgba(227, 32, 21, 0.8);"
+                        onclick="NhapMoi()">Nhập mới</button>
+            </div>
+            <table style="width: 45%; border-collapse: collapse; border-color: #fff ;float: left;">
+                <thead>
+                  <tr>
+                    <th class="checkboxx"><input type="checkbox" name="check" id="check"></th>
+                    <th class="mahd">Mã sách</th>
+                    <th class="maloai">Mã Loại</th>
+                    <th class="tensach">Tên Sách</th>
+                    <th class="edit">Giá</th>
+                    <th class="edit">Số lượng</th>
+                    <th class="edit.">Tác giả</th>
+                    <th class="edit">Bìa sách</th>
+                  </tr>
+                </thead>
+                
+                  <tr ng-repeat="x in listBill">
+                    <td class="le"><input type="checkbox" name="check" id="check"></td>
+                    <td class="le">{{x.maHD}}</td>              
+                    <td class="le">{{x.ngayLapHD}}</td>
+                    <td class="le">{{x.tenKH}}</td>
+                    <td class="le">{{x.sdtKH}}</td>
+                    <td class="le">{{x.email}}</td>
+                    <td class="le">{{x.diachi}}</td>
+                    <td class="le">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <i class="fa-regular fa-pen-to-square"></i>
+                      <i class="fa-regular fa-trash-can"></i>
+                    </td>
+                  </tr>
+                              
+            </table>
+            
+            <div class="number-page">
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">5</a>
+                <a href="">6</a>
+                <a href="">7</a>
+                <a href="">8</a>
+                <a href="">9</a>
+            </div>               
+        </div>
+    </div>
+    <script> 
+        function loadFile(event) {
+                var image = document.getElementById('viewimg');
+                image.src = URL.createObjectURL(event.target.files[0]);
+            }
+        function ThemSach() {
+            // var masach = document.getElementById("masach").value;
+            var maloai = document.getElementById("maloai").value;
+            var tensach = document.getElementById("tensach").value;
+            var gia = document.getElementById("gia").value;
+            var soluong = document.getElementById("soluong").value;
+            var tacgia = document.getElementById("tacgia").value;   
+            var bookcover = document.getElementById("bookcover").value;
+            
+            if (maloai == "") {
+                    alert("Vui lòng chọn loại sách!");
+                    return false;
+                }
+                else if (tensach == null || tensach =="" ) {
+                    alert("Vui lòng chọn nhà cung cấp!");
+                    return false;
+                }
+                else if (gia == null || gia == "") {
+                    alert("Giá sách không được để trống! Vui lòng nhập lại!");
+                    return false;
+                }
+                else if (gia < 0) {
+                    alert("Giá sách phải lớn hơn hoặc bằng 0! Vui lòng nhập lại!");
+                    return false;
+                }
+                else if (soluong == null || soluong == "") {
+                    alert("Số lượng sách không được để trống! Vui lòng nhập lại!");
+                    return false;
+                } else if (soluong < 0) {
+                    alert("Số lượng sản phẩm phải lớn hơn hoặc bằng 0! Vui lòng nhập lại!");
+                    return false;
+                }
+                // else {
+                //     for (var x of list) {
+                //         if (x.masanpham == masanpham) {
+                //             alert("Mã sản phẩm đã tồn tại! Vui lòng nhập lại!")
+                //             return false;
+                //         }
+                //     }
+                // }
+                else
+                    return true;
+        }
+    </script>
+    <!-- <script src="./home.js"></script> -->
+</body>
+</html>

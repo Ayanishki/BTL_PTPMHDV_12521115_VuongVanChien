@@ -1,0 +1,208 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+/* table > th {
+  background-color: #000000;
+} */
+#frame {
+    width: 100%;
+    height: 100%;
+    /* border-style: solid; */
+}
+#header-page {
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    width: 100%;
+    height: 120px;
+    border-bottom: solid #000000 4px;
+    margin-bottom: 2px;
+}
+/* CSS PHÍA TRÁI HEADER */
+#header-left {
+    height: 60px;
+    width: 30%;
+    font-size: large;
+    /* border-style: solid; */
+    text-align: center;
+    padding-top: 50px;
+    float: left;
+}
+#header-left > span {
+  color: #fff;
+  font-size: xx-large;
+  font-weight: 900;
+  align-items: center;
+}
+/* CSS PHÍA PHẢI HEADER */
+#header-right {
+    height: 60px;
+    width: 69%;
+    /* border-style: solid; */
+    text-align: center;
+    float: left;
+    padding-top: 50px;
+}
+/* CSS TITLE */
+.title {
+    font-size: 25px;
+    color: 	#fff;
+} 
+.log-out {
+  align-items: center;
+    padding-left: 60px;
+    text-decoration: none;
+    color: blue;
+}
+/* nội dung page */
+#content-page {
+    border-top: #000000 solid 4px;
+    /* border-bottom: #000000 solid 2px; */
+}
+/* css khung chứa menu và content trang chủ */
+.menu {
+    width: 10%;
+    height: 580px;
+    /* border-style: solid; */
+    background-color: #000000;
+    float: left;
+}
+/* css content hiển thị */
+#content {
+    width: 75%;
+    height: 260px;
+    /* border-style: solid; */
+    float: left;
+    margin-top: 25px;
+}
+/* css bảng home */
+.table-home {
+    width: 100%;
+    height: 100%;
+}
+/* css tạo ra các ô kích thước như nhau */
+.list-content {
+    height: 120px;
+    width: 200px;
+    /* border-style: solid; */
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+/* css icon cho tất cả các ô */
+.icon-content {
+    width: 30px;
+    height: 30px;
+    /* border-style: solid; */
+    font-size: 25px;
+    color: white;
+}
+.title-content {
+    width: 100%;
+    height: 20px;
+    /* border: solid black ; */
+    margin-top: 55px;
+    text-align: center;
+    color: white;
+}
+/* CSS MÀU CHO TỪNG Ô */
+.list-content {
+  background-color: #000000;
+}
+/*  */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    float: left;
+  }
+  
+  .menu-1, .menu-2, .menu-3, .menu-4,.menu-5,.menu-6,
+  .menu-7,.menu-8,.menu-9,.menu-10{
+    display: none;
+    background-color: #49505a;
+    padding: 10px;
+    color: white;
+    border: #000000 solid 1px;
+    text-decoration: none;
+  }
+
+  
+  nav li:hover ul {
+    display: block;
+  }
+  .link {
+    display: block;
+    padding: 10px;
+    color: white;
+    margin-left: 9px;
+    text-decoration: none;
+  }
+  #menucategory {
+    margin-bottom: 18px;
+    font-weight: bold;
+    font-size: 21px;
+  }
+  .down {
+    display: inline-block;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 100px;
+    color: #fff;
+  }
+  .btn-down {
+    display: inline-block;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 85px;
+    color: #fff;
+  }
+  .btn-down-1 {
+    display: inline-block;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 95px;
+    color: #fff;
+  }
+  .btn-up-1 {
+    display: none;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 95px;
+    color: #fff;
+  }
+
+  .btn-up {
+    display: none;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 85px;
+    color: #fff;
+  }
+  .up {
+    display: none;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    color: #fff;
+    border: none;
+    margin-left: 100px;
+  }
+  .icon-down {
+    margin-top: 4px;
+  }
+
+  .menu ul li {
+    float: none;
+  }
+  .category button.active {
+    background-color: #ccc;
+    border-right: 2px solid #00a2ff;
+}

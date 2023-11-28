@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./login.css">
+    <script src="./jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="logo"s>
+        <img src="./wignbooiks.png" alt="" style="width: 360px">
+    </div>
+    <div id="frame">
+        <div id="content-login">
+            <div class="img-login">
+                <img src="./circle-user.png" style="width: 100%; height: 100%;">
+            </div>
+            <form id="form-2" method="dialog" class="form" >
+                <div class="title-login">
+                    <span class="title">Đăng Nhập</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="username" class="form-label">Tài khoản</label>
+                    <input id="username" name="username" type="text" placeholder="Nhập tài khoản" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Mật Khẩu</label>
+                    <input id="password" name="password" type="text" placeholder="Nhập mật khẩu" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <input id="btn-register" type="submit" value="Đăng Nhập">
+            </form>
+
+        </div>
+    </div>
+    <!-- <script src="./login.js"></script>
+    <script>
+
+        Validator({
+          form: '#form-2',
+          rules: [
+            Validator.username('#username'),
+            Validator.password('#password'),
+          ]
+        })
+      </script> -->
+    <script>
+        var list = JSON.parse(localStorage.getItem('Staff')) ||
+        [
+            {
+            anhnv: "",
+            emailnv: "",
+            manv: 'admin',
+            mknv: "123",
+            quyen: "Quản lý",
+            sdtnv: "",
+            tennv: "",
+            trangthai: "Hoạt động"
+           }
+        ];
+
+        $("#form-2").submit(function (event) {
+            var username = $('#username').val();
+            var password = $('#password').val();
+            debugger;
+            for (x of list) {
+                if ((username == x.manv && password == x.mknv )) {
+                    var user = {
+                        manv: x.manv,
+                        tennv: x.tennv,
+                        emailnv: x.emailnv,
+                        sdtnv: x.sdtnv,
+                        quyen: x.quyen,
+                        mknv: x.mknv
+                    };
+                    localStorage.setItem('user', JSON.stringify(user));
+                    window.location.href = "./admin.html";
+                    break;
+                }
+                else if (username == x.manv && password == x.mknv) {
+                    var user = {
+                        manv: x.manv,
+                        tennv: x.tennv,
+                        emailnv: x.emailnv,
+                        sdtnv: x.sdtnv,
+                        quyen: x.quyen,
+                        mknv: x.mknv
+                    };
+                    localStorage.setItem('user', JSON.stringify(user));
+                    window.location.href = "./admin.html";
+                    break;
+                }
+                // else if (username == x.manv && password == x.mknv) {
+                //     alert("Tài khoản hiện bị khóa! Vui lòng liên hệ quản lý!");
+                //     break;
+                // }
+                else if (username != x.manv && password != x.mknv) {
+                    alert("Tên đăng nhập hoặc mật khẩu sai! Vui lòng nhập lại!");
+                    break;
+                }
+            }
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

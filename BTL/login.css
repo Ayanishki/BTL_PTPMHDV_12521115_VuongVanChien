@@ -1,0 +1,111 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color:whitesmoke ;
+}
+
+/* CHIA KHUNG CHO FORM */
+#logo {
+    margin-top: 9%;
+    text-align: center;
+    /* justify-content: center; */
+}
+#frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border-style: solid;  */
+    width: 750px;
+    height: 400px; 
+    background-color: white;
+    border-radius: 10px;
+}
+/* CSS KHỐI CONTENT */
+#content-login {
+    /* border-style: solid;  */
+    width: 700px;
+    height: 350px;
+    margin: 25px;
+    background-color: white;
+    /* RGB(9,101,160); */
+}
+/* CSS ẢNH LOGIN */
+.img-login {
+    /* border-style: solid;  */
+    
+    width: 45%;
+    height: 325px;
+    margin: 10px;
+    float: left;
+    margin-right: 30px;
+}
+/* css cho khối chứa chữ đăng nhập */
+.title-login {
+    float: left;
+    width: 100%;
+    height: 50px;
+    /* border-style: solid; */
+    margin: 10px 0px 10px 0px;
+}
+/* CSS KIỂU CHỮ KHOẢNG CÁCH CHO CHỮ */
+.title {
+    color: black;
+    font-weight: 36;
+    font-size: 35px;
+}
+/* CSS ĐOẠN CHỨA FORM */
+.form-group {
+    color: black;
+    display: flex;
+    margin-bottom: 5px;
+    flex-direction: column;
+    width: 95%;
+    height: 90px;
+    /* border-style: solid; */
+}
+/* CSS CHỮ TÀI KHOẢN , MẬT KHẨU */
+.form-label {
+    font-size: 22px
+}
+/* CSS THANH INPUT CHO CHỮ HIỂN THỊ CÁCH LỀ TRÁI */
+.form-control {
+    margin-top: 10px;
+    height: 35px;
+    width: 100%;
+    border: 1px solid black;
+    /* border-style: solid; */
+    font-size: 16px;
+    padding-left: 10px;
+}
+/* CSS KHUNG FORM   */
+.form {
+    /* border-style: solid; */
+    float: left;
+    width: 45%;
+    height: 340px;
+}
+/* CSS NÚT ĐĂNG NHẬP */
+#btn-register {
+    
+    margin-top: 5px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    border-radius: 7px;
+
+}
+/* CSS MESSAGE THÔNG BÁO LỖI */
+.form-message {
+    font-size: 16px;
+    color: #f33a58;
+}
+/* CSS THANH INPUT TRỞ THÀNH MÀU ĐỎ KHI GẶP LỖI */
+.form-group.invalid input{
+    border-color: #f33a58;
+    border-style: solid;
+}
+input[type="submit"]:hover {
+    opacity: 0.7;
+}
+

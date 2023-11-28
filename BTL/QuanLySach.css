@@ -1,0 +1,185 @@
+
+.menu-1, .menu-2, .menu-3, .menu-4,.menu-5,.menu-6,
+.menu-7,.menu-8,.menu-9,.menu-10{
+  display: block;
+  background-color: #49505a;
+  padding: 10px;
+  color: white;
+  border: #000000 solid 1px;
+  text-decoration: none;
+}
+.menu-3 {
+    background-color: RGB(22,130,186);
+}
+.down {
+    display: none;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 100px;
+    color: #fff;
+  }
+  .btn-down {
+    display: none;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 85px;
+    color: #fff;
+  }
+  .btn-down-1 {
+    display: none;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 95px;
+    color: #fff;
+  }
+  .btn-up-1 {
+    display: inline-block;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 95px;
+    color: #fff;
+  }
+
+  .btn-up {
+    display: inline-block;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    border: none;
+    margin-left: 85px;
+    color: #fff;
+  }
+  .up {
+    display: inline-block;
+    position: absolute;
+    background-color: RGB(22,130,186);
+    color: #fff;
+    border: none;
+    margin-left: 100px;
+  }
+
+
+  /* css nút thêm mới xóa nhiều */
+  .add, .delete {
+    color: #fff;
+    background-color: #000000;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+  }
+  .add {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+  th {
+    border: solid 1px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .masach {
+    width: 54px;
+    height: 36px;
+  }
+  td {
+    text-align: center;
+    height: 36px;
+  }
+  .le {
+    border: solid 1px;
+    background-color: #eeeeee;
+  }
+  .checkboxx {
+    width: 36px;
+    height: 36px;
+  }
+  .seri {
+    width: 120px;
+    height: 36px;
+  }
+  .nameproduct {
+    width: 120px;
+    height: 36px;
+  }
+  .tensach {
+    width: 120px;
+    height: 36px;
+  }
+  .maloai {
+    width: 120px;
+    height: 36px;
+  }
+  .view, .edit {
+    width: 120px;
+    height: 36px;
+  }
+
+.number-page {
+    /* border: solid; */
+    text-align: center;
+    padding-left: 50px;
+    margin-top: 50px;
+}
+a {
+    text-decoration: none;
+    padding-left: 20px;
+}
+.padding-box input, select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  width: 100%;
+  border-radius: 3px;
+}
+.padding-box {
+  padding: 10px 8px 0px 8px;
+}
+* {
+  box-sizing: border-box;
+  position: 0px;
+  margin: 0px auto;
+}
+.padding-box label[for=txtright] {
+  font-size: 14px;
+}
+.tabcontent {
+  /* display: none; */
+  padding: 15px 10px 10px 10px;
+}
+.row .table_chitiet {
+  width: 100%;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+}
+
+* {
+  box-sizing: border-box;
+  position: 0px;
+  margin: 0px auto;
+}
+hr {
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  margin: 20px 0px 15px 0px;
+}
+.row .table_chitiet {
+  width: 100%;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+}
+.btn-form {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+.row .table_chitiet th, .table_chitiet td {
+  border: none;
+}
