@@ -43,10 +43,40 @@ namespace API_Quanlybansach.Controllers
         }
         [Route("delete-sach")]
         [HttpDelete]
-        public SachModel Deleteitem([FromBody] SachModel model)
+        public string Deleteitem(string model)
         {
             _sachBusiness.Delete(model);
             return model;
+        }
+        [Route("danhsachhangtheogiatang")]
+        [HttpGet]
+        public List<SachModel> DanhSachHangTheoGiaTang()
+        {
+            return _sachBusiness.DanhSachHangTheoGiaTang();
+        }
+        [Route("danhsachhangtheogiagiam")]
+        [HttpGet]
+        public List<SachModel> DanhSachHangTheoGiaGiam()
+        {
+            return _sachBusiness.DanhSachHangTheoGiaGiam();
+        }
+        [Route("topsachbanchaytoanthoigian")]
+        [HttpGet]
+        public List<SachModel> TopSachBanChayToanThoiGian(string top)
+        {
+            return _sachBusiness.TopSachBanChayToanThoiGian(top);
+        }
+        [Route("topsachbanchay")]
+        [HttpGet]
+        public List<SachModel> TopSachBanChay(string top)
+        {
+            return _sachBusiness.TopSachBanChay(top);
+        }
+        [Route("danhsachtheotheloai")]
+        [HttpGet]
+        public List<SachModel> LayDanhSachSachTheoTheLoai(string maloai)
+        {
+            return _sachBusiness.LayDanhSachSachTheoTheLoai(maloai);
         }
         [Route("search")]
         [HttpPost]

@@ -12,7 +12,12 @@ namespace DataAccessLayer
         SachModel GetDatabyID(string id);
         bool Create(SachModel model);
         bool Update(SachModel model);
-        bool Delete(SachModel model);
-        public List<SachModel> Search(int pageIndex, int pageSize, out long total, string ten_sach, string tac_gia);
+        bool Delete(string model);
+        public List<SachModel> DanhSachHangTheoGiaTang();
+        public List<SachModel> DanhSachHangTheoGiaGiam();
+        public List<SachModel> LayDanhSachSachTheoTheLoai(string maloai);
+        public List<SachModel> TopSachBanChayToanThoiGian( string top);
+        public List<SachModel> TopSachBanChay(string top);
+        public List<ThongKeSachModel> Search(int pageIndex, int pageSize, out long total, string ten_sach, string tac_gia);
     }
 }

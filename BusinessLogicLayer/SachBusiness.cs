@@ -27,11 +27,31 @@ namespace BusinessLogicLayer
         {
             return _res.Update(model);
         }
-        public bool Delete(SachModel model)
+        public bool Delete(string model)
         {
             return _res.Delete(model);
         }
-        public  List<SachModel> Search(int pageIndex, int pageSize, out long total,string ten_sach,string tacgia) 
+        public List<SachModel> DanhSachHangTheoGiaTang()
+        {
+            return _res.DanhSachHangTheoGiaTang();
+        }
+        public List<SachModel> LayDanhSachSachTheoTheLoai(string maloai)
+        {
+            return _res.LayDanhSachSachTheoTheLoai(maloai);
+        }
+        public List<SachModel> DanhSachHangTheoGiaGiam()
+        {
+            return _res.DanhSachHangTheoGiaGiam();
+        }
+        public List<SachModel> TopSachBanChayToanThoiGian(string top)
+        {
+            return _res.TopSachBanChayToanThoiGian(top);
+        }
+        public List<SachModel> TopSachBanChay(string top)
+        {
+            return _res.TopSachBanChay(top);
+        }
+        public  List<ThongKeSachModel> Search(int pageIndex, int pageSize, out long total,string ten_sach,string tacgia) 
         { 
             return _res.Search(pageIndex,pageSize, out total, ten_sach, tacgia);
         }

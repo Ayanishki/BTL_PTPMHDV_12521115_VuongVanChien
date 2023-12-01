@@ -20,13 +20,13 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/api-admin/user/{everything}",
+      "UpstreamPathTemplate": "/api-admin/User/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
       //  "AllowedScopes": []
       //},
-      "DownstreamPathTemplate": "/api-admin/user/{everything}",
+      "DownstreamPathTemplate": "/api-admin/User/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -52,6 +52,70 @@
       ]
     },
     {
+      "UpstreamPathTemplate": "/api-admin/hoadon/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "DownstreamPathTemplate": "/api-admin/user/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44374
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-admin/phieunhap/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "DownstreamPathTemplate": "/api-admin/user/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44374
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-loaisach/user/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "DownstreamPathTemplate": "/api-admin/user/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44374
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-admin/othertools/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      "DownstreamPathTemplate": "/api-admin/user/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44374
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/api-client/sach/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
       //"AuthenticationOptions": {
@@ -68,22 +132,6 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/api-admin/hoadon/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "DownstreamPathTemplate": "/api-admin/hoadon/{everything}",
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 44374
-        }
-      ]
-    },
-    {
       "UpstreamPathTemplate": "/api-client/user/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
       //"AuthenticationOptions": {
@@ -91,22 +139,6 @@
       //  "AllowedScopes": []
       //},
       "DownstreamPathTemplate": "/api-admin/users/{everything}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 44300
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/api-client/hoadon/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "DownstreamPathTemplate": "/api-client/bill/{everything}",
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {

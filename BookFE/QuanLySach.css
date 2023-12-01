@@ -60,8 +60,6 @@
     border: none;
     margin-left: 100px;
   }
-
-
   /* css nút thêm mới xóa nhiều */
   .add, .delete {
     color: #fff;
@@ -80,7 +78,7 @@
     font-weight: bold;
   }
   
-  .mahd {
+  .masach {
     width: 54px;
     height: 36px;
   }
@@ -88,7 +86,16 @@
     text-align: center;
     height: 36px;
   }
+  #bc {
+    /* display: block; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
   .le {
+    width: 120px;
+    height: 120px; /* Đặt chiều rộng tối đa của container */
     border: solid 1px;
     background-color: #eeeeee;
   }
@@ -104,15 +111,15 @@
     width: 120px;
     height: 36px;
   }
-  .cate-gory {
+  .tensach {
     width: 120px;
     height: 36px;
   }
-  .date {
+  .maloai {
     width: 120px;
     height: 36px;
   }
-  .view, .edit, .deletes {
+  .view, .edit {
     width: 120px;
     height: 36px;
   }
@@ -182,4 +189,11 @@ hr {
 }
 .row .table_chitiet th, .table_chitiet td {
   border: none;
+}
+.padding-box td i {
+  cursor: pointer;
+  margin: 3px;
+}
+.padding-box td i:hover {
+  color: aqua;
 }

@@ -13,7 +13,7 @@ AS
         FROM HoaDon AS h
         WHERE  h.MaHoaDon = @MaHoaDon;
     END;
-
+exec sp_hoadon_get_by_id 15
 ----------Hoa Don Create------------
 USE [Quanlybansach]
 GO
@@ -147,7 +147,8 @@ AS
         SELECT '';
     END;
 
-	
+select * from Users
+exec sp_thong_ke_khach 1,10,'',null,null
 -------------Hoa Don Search----------------
 USE [Quanlybansach]
 GO
@@ -245,7 +246,6 @@ select * from Chitiethoadon
 select * from Users
 
 exec sp_thong_ke_khach 1,0,'',null,null
-
 
 --------Hóa đơn xóa---------------
 
@@ -417,12 +417,13 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create PROCEDURE [dbo].[sp_sach_delete](@id int)
+alter PROCEDURE [dbo].[sp_sach_delete](@MaSach int)
 AS
     BEGIN
       delete from Sach
-      where MaSach = @id
+      where MaSach = @MaSach
     END;
+select * from sach
 
 ----user_delete------
 
@@ -567,7 +568,7 @@ AS
     END;			
 
 exec sp_sach_create 1,'dd',2,2,'2',''
-select * from Sach
+	select * from Sach
 
 -----------sach update--------------
 USE [Quanlybansach]
@@ -621,6 +622,7 @@ AS
                               ORDER BY TenSach ASC)) AS RowNumber, 
                               s.MaSach,
 							  s.MaLoai,
+							  ls.TenLoai,
 							  s.TenSach,
 							  s.Gia,
 							  s.SoLuong,
@@ -628,6 +630,7 @@ AS
 							  s.BookCover
                         INTO #Results1
                         FROM Sach AS s
+						inner join LoaiSach ls on ls.MaLoai = s.MaLoai
 					    WHERE  (@ten_sach = '' Or s.TenSach like N'%'+@ten_sach+'%') and						
 						(@tac_gia = '' Or s.TacGia like N'%'+@tac_gia+'%');                   
                         SELECT @RecordCount = COUNT(*)
@@ -646,6 +649,7 @@ AS
                               ORDER BY TenSach ASC)) AS RowNumber, 
                               s.MaSach,
 							  s.MaLoai,
+							  ls.TenLoai,
 							  s.TenSach,
 							  s.Gia,
 							  s.SoLuong,
@@ -653,6 +657,7 @@ AS
 							  s.BookCover
                         INTO #Results2
                         FROM Sach AS s
+						inner join LoaiSach ls on ls.MaLoai = s.MaLoai
 					    WHERE  (@ten_sach = '' Or s.TenSach like N'%'+@ten_sach+'%') and						
 						(@tac_gia = '' Or s.TacGia like N'%'+@tac_gia+'%');                   
                         SELECT @RecordCount = COUNT(*)
@@ -955,7 +960,7 @@ AS
         SELECT '';
     END;
 
-	
+select * from KhachHang
 -------------phiếu nhập Search----------------
 USE [Quanlybansach]
 GO
@@ -1071,74 +1076,55 @@ as
 	end
 
 -----------topbanchay-------------
-alter Procedure TopSachBanChayTrongThang 
-as
-	begin
-		declare @Thang int
-		declare @Nam int
-		
-		--set @Thang = MONTH(dateadd(month,-1,GETDATE()))
-		--set @Nam = YEAR(dateadd(YEAR,-1,GETDATE()))
-		set @Thang = MONTH(GETDATE())
-		set @Nam = YEAR(GETDATE())
-		select top 10
-			s.MaSach,
-			s.TenSach,
-			s.TacGia,
-			s.Gia,
-			COUNT(*) as soluongban
-		from HoaDon hd
-		inner join Chitiethoadon cthd on cthd.MaHoaDon = hd.MaHoaDon
-		inner join Sach s on s.MaSach = cthd.MaSach
-		where 
-			MONTH(hd.NgayLapHD) = @Thang
-			and YEAR(hd.NgayLapHD) = @Nam
-		group by 
-			s.MaSach,
-			s.TenSach,
-			s.TacGia,
-			s.Gia
-		order by 
-			soluongban desc
-	end
-exec TopSachBanChayThangTruoc
 
-create Procedure TopSachBanChayThangtruoc
+exec TopSachBanChay 5
+
+----
+alter PROCEDURE TopSachBanChay(@Top int)
 as
 	begin
-		declare @Thang int
-		declare @Nam int
+		declare @ThangTruoc int
+		declare @ThangNay int
+		declare @NamTruoc int
+		declare @NamNay int
 		
-		set @Thang = MONTH(dateadd(month,-1,GETDATE()))
-		set @Nam = YEAR(dateadd(YEAR,-1,GETDATE()))
-		select top 10
+		set @ThangTruoc = MONTH(dateadd(month,-1,GETDATE()))
+		set @ThangNay = Month(getdate())
+		set @NamNay = YEAR(getdate())
+		set @NamTruoc = YEAR(dateadd(MONTH,-1,GETDATE()))
+		select top (@Top)
 			s.MaSach,
 			s.TenSach,
 			s.TacGia,
 			s.Gia,
+			s.BookCover,
 			COUNT(*) as soluongban
 		from HoaDon hd
-		inner join Chitiethoadon cthd on cthd.MaHoaDon = hd.MaHoaDon
-		inner join Sach s on s.MaSach = cthd.MaSach
-		where 
-			MONTH(hd.NgayLapHD) = @Thang
-			and YEAR(hd.NgayLapHD) = @Nam
+		INNER JOIN
+        Chitiethoadon cthd ON hd.MaHoaDon = cthd.MaHoaDon
+		INNER JOIN
+        Sach s ON cthd.MaSach = s.MaSach
+		where (MONTH(hd.NgayLapHD) = @ThangNay and YEAR(hd.NgayLapHD) = @NamNay) or (Month(hd.NgayLapHD) = @ThangTruoc and YEAR(hd.NgayLapHD) = @NamTruoc)
 		group by 
 			s.MaSach,
 			s.TenSach,
 			s.TacGia,
-			s.Gia
+			s.Gia,
+			s.BookCover
 		order by 
 			soluongban desc
 	end
-CREATE PROCEDURE TopSachBanChayToanThoiGian
+
+exec TopSachBanChayToanThoiGian 5
+alter PROCEDURE TopSachBanChayToanThoiGian(@Top int)
 AS
 BEGIN
-    SELECT TOP 10
+    SELECT TOP (@Top)
         s.MaSach,
         s.TenSach,
         s.TacGia,
         s.Gia,
+		s.BookCover,
         COUNT(*) AS SoLuongBan
     FROM
         HoaDon hd
@@ -1150,23 +1136,111 @@ BEGIN
         s.MaSach,
         s.TenSach,
         s.TacGia,
-        s.Gia
+        s.Gia,
+		s.BookCover
     ORDER BY
         SoLuongBan DESC
 END
-
-CREATE PROCEDURE LayDanhSachSachTheoTheLoai
+exec TopSachBanChayToanThoiGian
+-------------lay theo the loai
+alter PROCEDURE LayDanhSachSachTheoTheLoai
     @Maloai int
 AS
 BEGIN
     SELECT
         s.MaSach,
         s.TenSach,
+		ls.TenLoai,
         s.TacGia,
-        s.Gia
-    FROM
-        Sach s
+        s.Gia,
+		s.Soluong,
+		s.BookCover
+    FROM Sach s
 	inner join LoaiSach ls on s.MaLoai = ls.MaLoai
     WHERE
         s.MaLoai = @MaLoai
 END
+
+
+alter PROCEDURE CapNhatTonKho
+    @MaSach INT,
+    @SoLuongBan INT
+AS
+BEGIN
+    UPDATE Sach
+    SET Soluong = Soluong - @SoLuongBan
+    WHERE MaSach = @MaSach
+
+	select 
+		s.MaSach,
+        s.TenSach,
+		ls.TenLoai,
+        s.TacGia,
+        s.Gia,
+		s.Soluong,
+		s.BookCover
+	from Sach s
+	inner join LoaiSach ls on s.MaLoai = ls.MaLoai
+	where MaSach = @MaSach
+END
+exec CapNhatTonKho 2, 25
+------Lay Chi Tiet Don Hang--------
+CREATE PROCEDURE LayChiTietDonHang
+    @MaHoaDon INT
+AS
+BEGIN
+    SELECT
+		cthd.MaSach,
+        s.TenSach,
+        s.TacGia,
+        s.Gia,
+		s.BookCover,
+        cthd.SLban
+    FROM
+        Chitiethoadon cthd
+    INNER JOIN
+        Sach s ON cthd.MaSach = s.MaSach
+    WHERE
+        cthd.MaHoaDon = @MaHoaDon
+END
+exec LayChiTietDonHang 15
+
+--------LayDanhSachHangTheoGiaTangDan----------
+alter PROCEDURE LayDanhSachSachTheoGiaTang
+AS
+BEGIN
+    SELECT
+        s.MaSach,
+		ls.TenLoai,
+        s.TenSach,
+        s.TacGia,
+        s.Gia,
+		s.Soluong,
+		s.BookCover
+    FROM
+        Sach s
+		inner join LoaiSach ls on s.MaLoai = ls.MaLoai
+    ORDER BY
+        Gia ASC
+END
+exec LayDanhSachSachTheoGiaTang
+
+--------LayDanhSachHangTheoGiaGiamDan----------
+create PROCEDURE LayDanhSachSachTheoGiaGiam
+AS
+BEGIN
+    SELECT
+        s.MaSach,
+		ls.TenLoai,
+        s.TenSach,
+        s.TacGia,
+        s.Gia,
+		s.Soluong,
+		s.BookCover
+    FROM
+        Sach s
+		inner join LoaiSach ls on s.MaLoai = ls.MaLoai
+    ORDER BY
+        Gia Desc
+END
+exec LayDanhSachSachTheoGiamDan

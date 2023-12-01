@@ -201,10 +201,10 @@ values(1,'2023/06/06','chien@gmail.com','0985221329',N'Hưng Yên',1,1),
 (1,'2023/06/06','chien@gmail.com','0985221329',N'Bắc Ninh',1,1),
 (2,'2023/06/06','chien@gmail.com','0985221329',N'Hưng Yên',1,1),
 (3,'2023/06/06','chien@gmail.com','0985221329',N'Hưng Yên',1,1)
-
+select * from hoadon
 ----Thêm chi tiết hoá đơn
 insert into Chitiethoadon(MaHoaDon,MaSach,SLban,Giaban)
-values(14,5,7,36000)
+values(18,7,7,36000)
 INSERT INTO Chitiethoadon (MaHoaDon, MaSach, SLban, Giaban)
 VALUES (1, 1, 2, 20);
 

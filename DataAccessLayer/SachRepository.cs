@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer
@@ -79,13 +81,13 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
-        public bool Delete(SachModel model)
+        public bool Delete(string model)
         {
             string msgError = "";
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_sach_delete",
-                "@MaSach", model.MaSach);
+                "@MaSach", model);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -97,7 +99,98 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
-        public List<SachModel> Search(int pageIndex, int pageSize, out long total, string ten_sach, string tacgia)
+        public List<SachModel> DanhSachHangTheoGiaTang()
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "LayDanhSachSachTheoGiaTang");
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+                return dt.ConvertTo<SachModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<SachModel> DanhSachHangTheoGiaGiam()
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "LayDanhSachSachTheoGiaGiam");
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+                return dt.ConvertTo<SachModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public List<SachModel> LayDanhSachSachTheoTheLoai(string maloai)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "LayDanhSachSachTheoTheLoai",
+                    "@MaLoai",maloai);
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+                return dt.ConvertTo<SachModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<SachModel> TopSachBanChayToanThoiGian(string top)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "TopSachBanChayToanThoiGian",
+                    "@Top",top);
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+                return dt.ConvertTo<SachModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public List<SachModel> TopSachBanChay(string top)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "TopSachBanChay",
+                    "@Top", top);
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+                return dt.ConvertTo<SachModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public List<ThongKeSachModel> Search(int pageIndex, int pageSize, out long total, string ten_sach, string tacgia)
         {
             string msgError = "";
             total = 0;
@@ -112,7 +205,7 @@ namespace DataAccessLayer
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
                 if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
-                return dt.ConvertTo<SachModel>().ToList();
+                return dt.ConvertTo<ThongKeSachModel>().ToList();
             }
             catch (Exception ex)
             {

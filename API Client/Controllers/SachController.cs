@@ -20,6 +20,36 @@ namespace API_Quanlybansach.Controllers
         {
             return _sachBusiness.GetDatabyID(id);
         }
+        [Route("danhsachhangtheogiatang")]
+        [HttpGet]
+        public List<SachModel> DanhSachHangTheoGiaTang()
+        {
+            return _sachBusiness.DanhSachHangTheoGiaTang();
+        }
+        [Route("danhsachhangtheogiagiam")]
+        [HttpGet]
+        public List<SachModel> DanhSachHangTheoGiaGiam()
+        {
+            return _sachBusiness.DanhSachHangTheoGiaGiam();
+        }
+        [Route("topsachbanchaytoanthoigian")]
+        [HttpGet]
+        public List<SachModel> TopSachBanChayToanThoiGian(string top)
+        {
+            return _sachBusiness.TopSachBanChayToanThoiGian(top);
+        }
+        [Route("topsachbanchay")]
+        [HttpGet]
+        public List<SachModel> TopSachBanChay(string top)
+        {
+            return _sachBusiness.TopSachBanChay(top);
+        }
+        [Route("danhsachtheotheloai")]
+        [HttpGet]
+        public List<SachModel> LayDanhSachSachTheoTheLoai(string maloai)
+        {
+            return _sachBusiness.LayDanhSachSachTheoTheLoai(maloai);
+        }
         [Route("search")]
         [HttpPost]
         public IActionResult Search([FromBody] Dictionary<string, object> formData)

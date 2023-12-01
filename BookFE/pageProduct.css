@@ -80,7 +80,7 @@
     font-weight: bold;
   }
   
-  .masach {
+  .mahd {
     width: 54px;
     height: 36px;
   }
@@ -104,15 +104,15 @@
     width: 120px;
     height: 36px;
   }
-  .tensach {
+  .cate-gory {
     width: 120px;
     height: 36px;
   }
-  .maloai {
+  .date {
     width: 120px;
     height: 36px;
   }
-  .view, .edit {
+  .view, .edit, .deletes {
     width: 120px;
     height: 36px;
   }
@@ -182,4 +182,11 @@ hr {
 }
 .row .table_chitiet th, .table_chitiet td {
   border: none;
+}
+.padding-box td i {
+  cursor: pointer;
+  margin: 3px;
+}
+.padding-box td i:hover {
+  color: aqua;
 }

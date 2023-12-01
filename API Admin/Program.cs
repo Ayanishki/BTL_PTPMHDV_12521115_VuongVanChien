@@ -25,6 +25,7 @@ builder.Services.AddTransient<ILoaiSachRepository, LoaiSachRepository>();
 builder.Services.AddTransient<ILoaiSachBusiness, LoaiSachBusiness>();
 builder.Services.AddTransient<IPhieuNhapRepository, PhieuNhapRepository>();
 builder.Services.AddTransient<IPhieuNhapBusiness, PhieuNhapBusiness>();
+builder.Services.AddTransient<IOtherToolsBusiness, OTherToolsBusiness>();
 
 
 // configure strongly typed settings objects

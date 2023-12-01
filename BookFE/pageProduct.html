@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý sách</title>
+    <title>HomePage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -53,54 +53,53 @@
             <div style="float: left; width: 45%;">
                 <form>
                     <div class="col-12 col-s-12 padding-box">
-                        <label for="txtright">Mã sách:</label>
+                        <label for="txtright">Mã hóa đơn bán:</label>
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <input type="text" id="masach"
-                            placeholder="Nhập mã sách..Tự động sinh nếu không nhập...">
+                        <input type="text" id="mahd"
+                            placeholder="Nhập mã hóa đơn...Tự động sinh nếu không nhập...">
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <label for="txtright">Loại sách:</label>
+                        <label for="txtright">Khách hàng:</label>
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <input type="text" id="maloai" list="listLoai">
-                        <datalist id="listLoai">
-                            <option ng-repeat="i in listAllCategory" value="{{i.tenLoai}}" [data-value]="{{i.maLoai}}" >
+                        <input type="text" id="khachhang" list="listKhachHang">
+                        <datalist id="listKhachHang">
+                            <option value="Nguyễn Văn Anh">
+                            <option value="Nguyễn Thu Thủy">
+                            <option value="Phạm Ngọc Mai">
+                            <option value="Chu Minh Tuyết">
                         </datalist>
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <label for="txtright">Tên sách:</label>
+                        <label for="txtright">Số điện thoại:</label>
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <input type="text" id="tensach" placeholder="Nhập số điện thoại...">
+                        <input type="text" id="sdtkh" placeholder="Nhập số điện thoại...">
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <label for="txtright">Giá:</label>
+                        <label for="txtright">Email:</label>
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <input type="number" id="gia" placeholder="Nhập giá...">
+                        <input type="email" id="emailkh" placeholder="Nhập email...">
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <label for="txtright">Số lượng:</label>
+                        <label for="txtright">Địa chỉ:</label>
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <input type="number" id="soluong" placeholder="Nhập số lượng...">
+                        <input type="tel" id="diachikh" placeholder="Nhập địa chỉ...">
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <label for="txtright">Tác giả:</label>
+                        <label for="txtright">Tổng sản phẩm:</label>
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <input type="text" id="tacgia" placeholder="Nhập tên tác giả..." readonly>
+                        <input type="number" id="tongsanpham" value="0" readonly>
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <label for="txtright">Hình ảnh:</label>
+                        <label for="txtright">Tổng tiền:</label>
                     </div>
                     <div class="col-12 col-s-12 padding-box">
-                        <input type="file" id="bookcover" onchange="loadFile(event)">
-                        <center>
-                            <span style="float: left;">View:</span>
-                            <img id="viewimg" style="max-width:180px;max-height:180px;margin-top: 10px;">
-                        </center>
+                        <input type="number" id="tongtien" value="0" readonly>
                     </div>
                   
                   <!-- <div class="col-12 col-s-12 padding-box">
@@ -130,37 +129,53 @@
                     <button class="btn-form" style="background-color: rgba(227, 32, 21, 0.8);"
                         onclick="NhapMoi()">Nhập mới</button>
             </div>
-            <table style="width: 45%; border-collapse: collapse; border-color: #fff ;float: left;">
-                <thead>
-                  <tr>
-                    <th class="checkboxx"><input type="checkbox" name="check" id="check"></th>
-                    <th class="mahd">Mã sách</th>
-                    <th class="maloai">Mã Loại</th>
-                    <th class="tensach">Tên Sách</th>
-                    <th class="edit">Giá</th>
-                    <th class="edit">Số lượng</th>
-                    <th class="edit.">Tác giả</th>
-                    <th class="edit">Bìa sách</th>
-                  </tr>
-                </thead>
-                
-                  <tr ng-repeat="x in listBill">
-                    <td class="le"><input type="checkbox" name="check" id="check"></td>
-                    <td class="le">{{x.maHD}}</td>              
-                    <td class="le">{{x.ngayLapHD}}</td>
-                    <td class="le">{{x.tenKH}}</td>
-                    <td class="le">{{x.sdtKH}}</td>
-                    <td class="le">{{x.email}}</td>
-                    <td class="le">{{x.diachi}}</td>
-                    <td class="le">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                      <i class="fa-regular fa-pen-to-square"></i>
-                      <i class="fa-regular fa-trash-can"></i>
-                    </td>
-                  </tr>
-                              
-            </table>
-            
+            <div class="padding-box" style="float: left; width: 45%;">
+                <table style="width: 100%; border-collapse: collapse; border-color: #fff ;float: left;">
+                    <thead>
+                      <tr>
+                        <th class="checkboxx"><input type="checkbox" name="check" id="check"></th>
+                        <th class="mahd">MaHD</th>
+                        <th class="date">Ngày lập hóa đơn</th>
+                        <th class="cate-gory">Tên Khách hàng</th>
+                        <th class="edit">SDT Khách hàng</th>
+                        <th class="edit">Email</th>
+                        <th class="edit">Địa chỉ</th>
+                        <th class="deletes">Tools</th>
+                      </tr>
+                      <tr>
+                        <td class="le"><input type="checkbox" name="check" id="check"></td>
+                        <td class="le">{{x.maHD}}</td>              
+                        <td class="le">{{x.ngayLapHD}}</td>
+                        <td class="le">{{x.tenKH}}</td>
+                        <td class="le">{{x.sdtKH}}</td>
+                        <td class="le">{{x.email}}</td>
+                        <td class="le">{{x.diachi}}</td>
+                        <td class="le">
+                          <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                          <i class="fa-regular fa-pen-to-square"></i>
+                          <i class="fa-regular fa-trash-can"></i>
+                        </td>
+                      </tr>
+                    </thead>
+                    
+                      <tr ng-repeat="x in listBill">
+                        <td class="le"><input type="checkbox" name="check" id="check"></td>
+                        <td class="le">{{x.maHD}}</td>              
+                        <td class="le">{{x.ngayLapHD}}</td>
+                        <td class="le">{{x.tenKH}}</td>
+                        <td class="le">{{x.sdtKH}}</td>
+                        <td class="le">{{x.email}}</td>
+                        <td class="le">{{x.diachi}}</td>
+                        <td class="le">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                          <i class="fa-regular fa-pen-to-square"></i>
+                          <i class="fa-regular fa-trash-can"></i>
+                        </td>
+                      </tr>
+                                  
+                </table>
+            </div>
+            <hr>
             <div class="number-page">
                 <a href="">1</a>
                 <a href="">2</a>
@@ -174,55 +189,6 @@
             </div>               
         </div>
     </div>
-    <script> 
-        function loadFile(event) {
-                var image = document.getElementById('viewimg');
-                image.src = URL.createObjectURL(event.target.files[0]);
-            }
-        function ThemSach() {
-            // var masach = document.getElementById("masach").value;
-            var maloai = document.getElementById("maloai").value;
-            var tensach = document.getElementById("tensach").value;
-            var gia = document.getElementById("gia").value;
-            var soluong = document.getElementById("soluong").value;
-            var tacgia = document.getElementById("tacgia").value;   
-            var bookcover = document.getElementById("bookcover").value;
-            
-            if (maloai == "") {
-                    alert("Vui lòng chọn loại sách!");
-                    return false;
-                }
-                else if (tensach == null || tensach =="" ) {
-                    alert("Vui lòng chọn nhà cung cấp!");
-                    return false;
-                }
-                else if (gia == null || gia == "") {
-                    alert("Giá sách không được để trống! Vui lòng nhập lại!");
-                    return false;
-                }
-                else if (gia < 0) {
-                    alert("Giá sách phải lớn hơn hoặc bằng 0! Vui lòng nhập lại!");
-                    return false;
-                }
-                else if (soluong == null || soluong == "") {
-                    alert("Số lượng sách không được để trống! Vui lòng nhập lại!");
-                    return false;
-                } else if (soluong < 0) {
-                    alert("Số lượng sản phẩm phải lớn hơn hoặc bằng 0! Vui lòng nhập lại!");
-                    return false;
-                }
-                // else {
-                //     for (var x of list) {
-                //         if (x.masanpham == masanpham) {
-                //             alert("Mã sản phẩm đã tồn tại! Vui lòng nhập lại!")
-                //             return false;
-                //         }
-                //     }
-                // }
-                else
-                    return true;
-        }
-    </script>
-    <!-- <script src="./home.js"></script> -->
+    <script src="./home.js"></script>
 </body>
 </html>

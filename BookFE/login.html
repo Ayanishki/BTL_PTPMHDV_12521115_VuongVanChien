@@ -9,9 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./login.css">
+    <script src="./global.js"></script>
     <script src="./jquery-3.6.0.min.js"></script>
+    <script src="angular.min.js"></script>
+    
 </head>
-<body>
+<body ng-app="AppBanSach" ng-controller="HomeCtrl">
     <div id="logo"s>
         <img src="./wignbooiks.png" alt="" style="width: 360px">
     </div>
@@ -27,15 +30,15 @@
 
                 <div class="form-group">
                     <label for="username" class="form-label">Tài khoản</label>
-                    <input id="username" name="username" type="text" placeholder="Nhập tài khoản" class="form-control">
+                    <input id="txtusername" name="username" type="text" placeholder="Nhập tài khoản" class="form-control">
                     <span class="form-message"></span>
                 </div>
                 <div class="form-group">
                     <label for="password" class="form-label">Mật Khẩu</label>
-                    <input id="password" name="password" type="text" placeholder="Nhập mật khẩu" class="form-control">
+                    <input id="txtpassword" name="password" type="text" placeholder="Nhập mật khẩu" class="form-control">
                     <span class="form-message"></span>
                 </div>
-                <input id="btn-register" type="submit" value="Đăng Nhập">
+                <input id="btn-register" type="submit" ng-click="Login()" value="Đăng Nhập">
             </form>
 
         </div>
@@ -51,7 +54,7 @@
           ]
         })
       </script> -->
-    <script>
+    <!-- <script>
         var list = JSON.parse(localStorage.getItem('Staff')) ||
         [
             {
@@ -108,6 +111,7 @@
             }
             event.preventDefault();
         });
-    </script>
+    </script> -->
 </body>
+<script src="homepage_sanpham.js"></script>
 </html>
